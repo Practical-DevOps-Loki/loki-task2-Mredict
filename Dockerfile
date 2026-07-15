@@ -3,7 +3,7 @@ WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 COPY . .
-RUN go build -o webapp .
+RUN CGO_ENABLED=0 GOOS=linux go build -o webapp .
 
 FROM alpine:3.18 as runner
 ENV PORT=3000 \
