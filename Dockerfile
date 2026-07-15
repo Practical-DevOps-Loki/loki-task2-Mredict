@@ -9,5 +9,4 @@ ENV PORT=3000 \
 WORKDIR /app
 COPY --from=builder /app/webapp /app
 EXPOSE ${PORT}
-RUN touch /app/log/app.log
 CMD ["/app/webapp"]
