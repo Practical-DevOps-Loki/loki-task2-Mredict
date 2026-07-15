@@ -29,7 +29,7 @@ services:
     command: -config.file=/etc/loki/local-config.yaml
     ports:
       - "3100:3100"
-  
+
   promtail:
     image: grafana/promtail:latest
     volumes:
@@ -38,6 +38,6 @@ services:
     command: -config.file=/etc/promtail/webapp-config.yaml
     depends_on:
       - loki
-  
+
 volumes:
   log-data:
