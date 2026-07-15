@@ -25,7 +25,7 @@ services:
       - ./loki-config/grafana-datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yaml
 
   loki:
-    image: grafana/loki:lastest
+    image: grafana/loki:latest
     command: -config.file=/etc/loki/local-config.yaml
     ports:
       - "3100:3100"

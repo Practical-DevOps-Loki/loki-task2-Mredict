@@ -6,7 +6,10 @@ COPY . .
 RUN go build -o webapp .
 
 FROM alpine:3.18 as runner
+ENV PORT=3000 \
+    LOG_PATH=/app/log/app.log
 WORKDIR /app
 COPY --from=builder /app/webapp .
-EXPOSE 8080
+COPY --from=builder /app/public ./public
+EXPOSE ${PORT}
 CMD ["./webapp"]
