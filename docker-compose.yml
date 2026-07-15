@@ -10,7 +10,7 @@ services:
     volumes:
       - log-data:/app/log/
     environment:
-      - PORT=8000
+      - PORT=3000
       - LOG_PATH=/app/log/app.log
 
   grafana:
